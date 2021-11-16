@@ -11,6 +11,8 @@
 #include <Generated/HM3/ZHMEnums.h>
 #elif ZHM_TARGET == 2
 #include <Generated/HM2/ZHMEnums.h>
+#elif ZHM_TARGET == SA
+#include <Generated/HMSA/ZHMEnums.h>
 #elif ZHM_TARGET == 2016
 #include <Generated/HM2016/ZHMEnums.h>
 #endif
