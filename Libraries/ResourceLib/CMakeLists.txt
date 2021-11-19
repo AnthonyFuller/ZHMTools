@@ -65,6 +65,16 @@ set(RESOURCELIB_SOURCES_HM2
 	Include/ResourceLib_HM2.h
 )
 
+set(RESOURCELIB_SOURCES_HMSA
+	Src/Generated/HMSA/ZHMEnums.cpp
+	Src/Generated/HMSA/ZHMEnums.h
+	Src/Generated/HMSA/ZHMGen.cpp
+	Src/Generated/HMSA/ZHMGen.h
+	Src/Generated/HMSA/ZHMProperties.cpp
+	Src/Generated/HMSA/ZHMProperties.h
+	Include/ResourceLib_HMSA.h
+)
+
 set(RESOURCELIB_SOURCES_HM2016
 	Src/Generated/HM2016/ZHMEnums.cpp
 	Src/Generated/HM2016/ZHMEnums.h
@@ -93,13 +103,19 @@ add_library(ResourceLib_HM2 ${RESOURCELIB_TYPE}
 	${RESOURCELIB_SOURCES_HM2}
 )
 
+add_library(ResourceLib_HMSA ${RESOURCELIB_TYPE}
+	${RESOURCELIB_HEADERS}
+	${RESOURCELIB_SOURCES}
+	${RESOURCELIB_SOURCES_HMSA}
+)
+
 add_library(ResourceLib_HM2016 ${RESOURCELIB_TYPE}
 	${RESOURCELIB_HEADERS}
 	${RESOURCELIB_SOURCES}
 	${RESOURCELIB_SOURCES_HM2016}
 )
 
-set_target_properties(ResourceLib_HM3 ResourceLib_HM2 ResourceLib_HM2016 PROPERTIES
+set_target_properties(ResourceLib_HM3 ResourceLib_HM2 ResourceLib_HMSA ResourceLib_HM2016 PROPERTIES
 	CXX_VISIBILITY_PRESET hidden
 )
 
@@ -118,6 +134,10 @@ target_compile_options(ResourceLib_HM3 PRIVATE ${RESOURCELIB_COMPILE_FLAGS})
 target_link_options(ResourceLib_HM3 PRIVATE ${RESOURCELIB_LINK_FLAGS})
 target_compile_options(ResourceLib_HM2 PRIVATE ${RESOURCELIB_COMPILE_FLAGS})
 target_link_options(ResourceLib_HM2 PRIVATE ${RESOURCELIB_LINK_FLAGS})
+target_compile_options(ResourceLib_HMSA PRIVATE ${RESOURCELIB_COMPILE_FLAGS})
+target_link_options(ResourceLib_HMSA PRIVATE ${RESOURCELIB_LINK_FLAGS})
+target_compile_options(ResourceLib_HM2016 PRIVATE ${RESOURCELIB_COMPILE_FLAGS})
+target_link_options(ResourceLib_HM2016 PRIVATE ${RESOURCELIB_LINK_FLAGS})
 
 target_compile_definitions(ResourceLib_HM3 
 	PRIVATE RESOURCELIB_EXPORTS ZHM_TARGET=3
@@ -125,6 +145,10 @@ target_compile_definitions(ResourceLib_HM3
 
 target_compile_definitions(ResourceLib_HM2 
 	PRIVATE RESOURCELIB_EXPORTS ZHM_TARGET=2
+)
+
+target_compile_definitions(ResourceLib_HMSA
+	PRIVATE RESOURCELIB_EXPORTS ZHM_TARGET=SA
 )
 
 target_compile_definitions(ResourceLib_HM2016
@@ -137,6 +161,11 @@ target_include_directories(ResourceLib_HM3
 )
 
 target_include_directories(ResourceLib_HM2 
+	PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/Src
+	PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Include
+)
+
+target_include_directories(ResourceLib_HMSA
 	PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/Src
 	PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Include
 )

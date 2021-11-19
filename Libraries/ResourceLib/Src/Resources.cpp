@@ -10,6 +10,8 @@
 #include <Generated/HM3/ZHMGen.h>
 #elif ZHM_TARGET == 2
 #include <Generated/HM2/ZHMGen.h>
+#elif ZHM_TARGET == SA
+#include <Generated/HMSA/ZHMGen.h>
 #elif ZHM_TARGET == 2016
 #include <Generated/HM2016/ZHMGen.h>
 #endif
@@ -18,7 +20,7 @@
 
 // Register all supported resource types here.
 std::unordered_map<std::string, Resource> g_Resources = {
-#if ZHM_TARGET == 2016 
+#if ZHM_TARGET == 2016 || ZHM_TARGET == SA
 	REGISTER_RESOURCE(TEMP, STemplateEntity)
 #else
 	REGISTER_RESOURCE(TEMP, STemplateEntityFactory)
@@ -33,7 +35,7 @@ std::unordered_map<std::string, Resource> g_Resources = {
 	REGISTER_RESOURCE(CRMD, SCrowdMapData)
 	REGISTER_RESOURCE(DSWB, SAudioSwitchBlueprintData)
 	
-#if ZHM_TARGET != 2016
+#if ZHM_TARGET != 2016 && ZHM_TARGET != SA
 	REGISTER_RESOURCE(ECPB, SExtendedCppEntityBlueprint)
 #endif
 	
