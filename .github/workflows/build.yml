@@ -52,6 +52,8 @@ jobs:
         Copy-Item ResourceLib_HM2.pdb -Destination _resourcetool/
         Copy-Item ResourceLib_HM3.dll -Destination _resourcetool/
         Copy-Item ResourceLib_HM3.pdb -Destination _resourcetool/
+        Copy-Item ResourceLib_HMSA.dll -Destination _resourcetool/
+        Copy-Item ResourceLib_HMSA.pdb -Destination _resourcetool/
         Copy-Item ResourceLib_HM2016.dll -Destination _resourcetool/
         Copy-Item ResourceLib_HM2016.pdb -Destination _resourcetool/
         Copy-Item ../LICENSE -Destination _resourcetool/
@@ -77,6 +79,9 @@ jobs:
         Copy-Item ResourceLib_HM3.dll -Destination _resourcelib/
         Copy-Item ResourceLib_HM3.lib -Destination _resourcelib/
         Copy-Item ResourceLib_HM3.pdb -Destination _resourcelib/
+        Copy-Item ResourceLib_HMSA.dll -Destination _resourcelib/
+        Copy-Item ResourceLib_HMSA.lib -Destination _resourcelib/
+        Copy-Item ResourceLib_HMSA.pdb -Destination _resourcelib/
         Copy-Item ResourceLib_HM2016.dll -Destination _resourcelib/
         Copy-Item ResourceLib_HM2016.lib -Destination _resourcelib/
         Copy-Item ResourceLib_HM2016.pdb -Destination _resourcelib/
