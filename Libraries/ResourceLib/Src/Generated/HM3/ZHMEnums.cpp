@@ -6881,6 +6881,12 @@ void ZHMEnums::RegisterEnums()
 		{ 2, "ETECT_Reset" },
 	};
 
+	(*g_Enums)["ETraceMessageType"] = {
+		{ 0, "Message" },
+		{ 1, "Warning" },
+		{ 2, "Error" },
+	};
+
 	(*g_Enums)["EUIActionGroupIcon"] = {
 		{ 0, "EUIAGI_NoIcon" },
 		{ 1, "EUIAGI_GenericTool" },
@@ -8961,11 +8967,12 @@ void ZHMEnums::RegisterEnums()
 	(*g_Enums)["ZEvergreenMenuCondition.EQuery"] = {
 		{ 0, "IS_OPENING" },
 		{ 1, "IS_OPEN" },
-		{ 2, "IS_CLOSING" },
-		{ 3, "IS_CLOSED" },
-		{ 4, "IS_PROCESSING_INPUT" },
-		{ 5, "IS_ZOOMED_IN" },
-		{ 6, "IS_ZOOMED_OUT" },
+		{ 2, "IS_OPENING_OR_OPEN" },
+		{ 3, "IS_CLOSING" },
+		{ 4, "IS_CLOSED" },
+		{ 5, "IS_PROCESSING_INPUT" },
+		{ 6, "IS_ZOOMED_IN" },
+		{ 7, "IS_ZOOMED_OUT" },
 	};
 
 	(*g_Enums)["ZEvergreenMenuCounterScrollEntity.EAxis2DMouse"] = {
