@@ -54113,6 +54113,10 @@ void ZEvergreenCampaignProgressDataProvider_SData::WriteSimpleJson(void* p_Objec
 
 	p_Stream << simdjson::as_json_string("goToExitObjectivesFail") << ":";
 	p_Stream << simdjson::as_json_string(s_Object->goToExitObjectivesFail);
+	p_Stream << ",";
+
+	p_Stream << simdjson::as_json_string("campaignActivatorInUse") << ":";
+	p_Stream << simdjson::as_json_string(s_Object->campaignActivatorInUse);
 
 	p_Stream << "}";
 }
@@ -54151,6 +54155,8 @@ void ZEvergreenCampaignProgressDataProvider_SData::FromSimpleJson(simdjson::onde
 
 	s_Object.goToExitObjectivesFail = simdjson::from_json_bool(p_Document["goToExitObjectivesFail"]);
 
+	s_Object.campaignActivatorInUse = simdjson::from_json_bool(p_Document["campaignActivatorInUse"]);
+
 	*reinterpret_cast<ZEvergreenCampaignProgressDataProvider_SData*>(p_Target) = s_Object;
 }
 
@@ -54181,6 +54187,7 @@ bool ZEvergreenCampaignProgressDataProvider_SData::operator==(const ZEvergreenCa
 	if (hardcore != p_Other.hardcore) return false;
 	if (goToExitObjectivesDone != p_Other.goToExitObjectivesDone) return false;
 	if (goToExitObjectivesFail != p_Other.goToExitObjectivesFail) return false;
+	if (campaignActivatorInUse != p_Other.campaignActivatorInUse) return false;
 
 	return true;
 }

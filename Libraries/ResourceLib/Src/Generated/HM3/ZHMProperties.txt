@@ -255,6 +255,7 @@ bonusRequirements
 button
 buttonprompts
 campaign
+campaignActivatorInUse
 canReload
 causalnode
 cbMappingNames
@@ -620,6 +621,7 @@ m_CameraBones
 m_CameraConfig
 m_CameraSpatial
 m_CameraTransform
+m_CampaignActivatorInUse
 m_CampaignIcon
 m_CampaignManager
 m_CampaignProgressHelper
@@ -1375,6 +1377,7 @@ m_TokenToFind
 m_TrackingBones
 m_TrackingLocations
 m_TrailDecalsSpawner
+m_TransformParent
 m_TrapsData
 m_TrespassingAttentionDuration
 m_TrespassingPeripheralAttentionDuration
@@ -2784,6 +2787,7 @@ m_bIsEnabled
 m_bIsEnabledCondValid
 m_bIsEntering
 m_bIsEscapeNode
+m_bIsEvergreenMenuSpatial
 m_bIsFadeDown
 m_bIsFalseAlarm
 m_bIsFemale
@@ -3798,6 +3802,7 @@ m_dtAnimationLength
 m_dtBlendIn
 m_dtBlendOut
 m_dtCloseTransition
+m_dtDelay
 m_dtFadeWhenDisabled
 m_dtFadeWhenEnabled
 m_dtInterval
@@ -3806,6 +3811,7 @@ m_dtOpenTransition
 m_dtResetAnimDuration
 m_dtTransition
 m_dtZoomInBlendTime
+m_dtZoomInDelayTime
 m_dtZoomOutBlendTime
 m_dtZoomPanBlendTime
 m_dummyProperty
@@ -4563,6 +4569,7 @@ m_fDeceleration
 m_fDefaultActivationAngle
 m_fDefaultActivationArc
 m_fDefaultAlignAngle
+m_fDefaultHeight
 m_fDefaultMessageTimeout
 m_fDefaultOcclusionFactor
 m_fDefaultRadius
@@ -5901,6 +5908,7 @@ m_menu
 m_menuOverlayContainer
 m_mercesPayoutHotMission
 m_mercesPayoutMildMission
+m_messageType
 m_metricName
 m_middleBoxDepthMarginFar
 m_middleBoxDepthMarginNear
@@ -6488,6 +6496,7 @@ m_pActorEntity
 m_pActorInstance
 m_pActorList
 m_pActorModel
+m_pActorResource
 m_pActorTagController
 m_pAimAt
 m_pAlignGizmo

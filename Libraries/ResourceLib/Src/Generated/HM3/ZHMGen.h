@@ -7847,6 +7847,14 @@ enum class ETimerEntityCommandType
 };
 
 // Size: 0x4
+enum class ETraceMessageType
+{
+	Message = 0,
+	Warning = 1,
+	Error = 2,
+};
+
+// Size: 0x4
 enum class EUIActionGroupIcon
 {
 	EUIAGI_NoIcon = 0,
@@ -22534,7 +22542,7 @@ public:
 	bool hardcore; // 0x34
 	bool goToExitObjectivesDone; // 0x35
 	bool goToExitObjectivesFail; // 0x36
-	uint8_t _pad37[1] {};
+	bool campaignActivatorInUse; // 0x37
 };
 
 // Size: 0x4
@@ -22623,11 +22631,12 @@ enum class ZEvergreenMenuCondition_EQuery
 {
 	IS_OPENING = 0,
 	IS_OPEN = 1,
-	IS_CLOSING = 2,
-	IS_CLOSED = 3,
-	IS_PROCESSING_INPUT = 4,
-	IS_ZOOMED_IN = 5,
-	IS_ZOOMED_OUT = 6,
+	IS_OPENING_OR_OPEN = 2,
+	IS_CLOSING = 3,
+	IS_CLOSED = 4,
+	IS_PROCESSING_INPUT = 5,
+	IS_ZOOMED_IN = 6,
+	IS_ZOOMED_OUT = 7,
 };
 
 // Size: 0x18
